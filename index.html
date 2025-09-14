@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Class-7</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container" >
+        <div class="child_cont" id="test-element">
+
+            <h1>CSS-Class-7</h1>
+            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, fuga.</p>
+        </div>
+    </div>
+    <script>
+        function getViewportWidth() {
+            return window.innerWidth; // Returns the width in pixels
+        }
+        function getComputedPx(element, property) {
+    if (!element) return null;
+    
+    // Get computed styles of the element
+    const computedStyle = window.getComputedStyle(element);
+    
+    // Extract the property value in px
+    const valueInPx = computedStyle.getPropertyValue(property);
+    
+    return valueInPx;
+}
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const element = document.querySelector("#test-element");
+
+            console.log("Font size in px:", getComputedPx(element, "font-size"));
+            console.log("Width in px:", getComputedPx(element, "width"));
+            console.log("Height in px:", getComputedPx(element, "height"));
+        });
+    </script>
+</body>
+</html>
